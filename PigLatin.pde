@@ -17,17 +17,33 @@ public int findFirstVowel(String sWord)
 {
 
 	String[] vowels = new String[]{"a","e","i","o","u"};
-  for(int i = 0; i < sWord.length(); i++)
-  {
-    for(int v = 0; v<vowels.length-1; v++)
-    {
-      if(sWord.substring(i,i+1).equals(vowels[v]))
-      {
-        return i;
-      }
-    }
-  }
-  return -1;
+	for(int i = 0; i < sWord.length(); i++)
+	{
+    	for(int v = 0; v<vowels.length-1; v++)
+    	{
+     		if(sWord.substring(i,i+1).equals(vowels[v]))
+      		{
+        	return i;
+      		}
+    	}
+  	}
+  	return -1;
+}
+
+public String quicky(String check)
+{
+	String que = "qu";
+	for(int i = 0; i < check.length(); i++)
+	{
+    	for(int q = 0; q<que.length-1; v++)
+    	{
+     		if(check.substring(i,i+2).equals(que))
+      		{
+        	return i;
+      		}
+    	}
+  	}
+  	return -1;
 }
 
 public String pigLatin(String sWord)
@@ -38,13 +54,16 @@ public String pigLatin(String sWord)
 	{
 		return sWord + "ay";
 	}
+	if(findFirstVowel(sWord) == 0)
+	{
+		return sWord + "way";//lawTime(sWord);
+	}
+	if(quicky(sWord) == true)
+	{
+
+	}
 	else
 	{
-		return "ERROR";//lawTime(sWord);
+		return "error";
 	}
 }
-
-/*public String lawTime(String sWord)
-{
-
-*/
