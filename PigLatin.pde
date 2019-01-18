@@ -30,20 +30,14 @@ public int findFirstVowel(String sWord)
   	return -1;
 }
 
-public String quicky(String check)
+public boolean quicky(String check)
 {
-	String que = "qu";
-	for(int i = 0; i < check.length(); i++)
-	{
-    	for(int q = 0; q<que.length-1; v++)
-    	{
-     		if(check.substring(i,i+2).equals(que))
-      		{
-        	return i;
-      		}
-    	}
-  	}
-  	return -1;
+	String quecc = "qu";
+    if(check.substring(0,2).equals(quecc))
+    {
+    	return true;
+    }
+  	return false;
 }
 
 public String pigLatin(String sWord)
@@ -60,7 +54,7 @@ public String pigLatin(String sWord)
 	}
 	if(quicky(sWord) == true)
 	{
-
+		return sWord.substring(2) + "quay";
 	}
 	else
 	{
