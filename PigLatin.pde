@@ -40,24 +40,7 @@ public boolean qChecker(String check)
   	return false;
 }
 
-public String conStart(String sWord)
-{	
-	int vPos;
-	String[] vowels = new String[]{"a","e","i","o","u"};
-	for(int i = 0; i < sWord.length(); i++)
-	{
-    	for(int v = 0; v<vowels.length-1; v++)
-    	{
-     		if(sWord.substring(i,i+1).equals(vowels[v]))
-      		{
-        		vPos = i;
-        		return sWord.substring(i,sWord.length()) + sWord.substring(0,i) + "ay";
-      		}
-    	}
-  	}
 
-	
-}
 
 public String pigLatin(String sWord)
 //precondition: sWord is a valid String of length greater than 0
@@ -77,7 +60,21 @@ public String pigLatin(String sWord)
 	}
 	else//rule 4 (regular cons/vowel words)
 	{
-		conStart(sWord);
+		//Couldn't get this to work in a function, so putting all the code in the else statement
+		int vPos;
+		String[] vowels = new String[]{"a","e","i","o","u"};
+		for(int i = 0; i < sWord.length(); i++)
+		{
+    		for(int v = 0; v<vowels.length-1; v++)
+    		{
+     			if(sWord.substring(i,i+1).equals(vowels[v]))
+      			{
+        			vPos = i;
+        			return (sWord.substring(i,sWord.length()) + sWord.substring(0,i) + "ay");
+      			}
+    		}
+  		}
+  		//End of sloppy else code
 	}
 	return "error";
 }
